@@ -13,7 +13,13 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P1_9_NumbersAddition()
         {
-
+            Console.Write("Insert the first number: ");
+            Int32.TryParse(Console.ReadLine(), out var number1);
+            Console.Write("Insert the second number: ");
+            Int32.TryParse(Console.ReadLine(), out var number2);
+            int result = number1 + number2;
+            Console.WriteLine($"the result of addiction is {result}");
+            Console.WriteLine("-".PadRight(50, '-'));
         }
 
         /// <summary>
@@ -23,7 +29,15 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P2_9_CheckResultAddition()
         {
-
+            Console.Write("Insert the first number: ");
+            Int32.TryParse(Console.ReadLine(), out var number1);
+            Console.Write("Insert the second number: ");
+            Int32.TryParse(Console.ReadLine(), out var number2);
+            int result = number1 + number2;
+            Console.Write("Enter the result number: ");
+            Int32.TryParse(Console.ReadLine(), out var userResult);
+            Console.WriteLine(result == userResult ? "Correct" : "Wrong");
+            Console.WriteLine("-".PadRight(50, '-'));
         }
 
         /// <summary>
@@ -33,7 +47,24 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P3_9_CheckResultAdditionWithTips()
         {
+            Console.Write("Insert the first number: ");
+            Int32.TryParse(Console.ReadLine(), out var number1);
+            Console.Write("Insert the second number: ");
+            Int32.TryParse(Console.ReadLine(), out var number2);
+            int result = number1 + number2;
+            int userResult;
+            do
+            {
+                Console.Write("Enter the result number: ");
+                Int32.TryParse(Console.ReadLine(), out userResult);
+                Console.WriteLine(result == userResult ? "Correct" : "Wrong");
+                if (result > userResult)
+                    Console.WriteLine("The result is bigger");
+                if (result < userResult)
+                    Console.WriteLine("The result is lower");
+            } while (result != userResult);
 
+            Console.WriteLine("-".PadRight(50, '-'));
         }
 
         /// <summary>
@@ -42,7 +73,32 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P4_9_CheckResultWithOperator()
         {
+            Console.Write("Insert the first number: ");
+            Int32.TryParse(Console.ReadLine(), out var number1);
+            Console.Write("Insert the second number: ");
+            Int32.TryParse(Console.ReadLine(), out var number2);
+            int result = 0;
+            Console.Write("do you want to make addition or subtraction (insert the symbol): ");
+            string operation = Console.ReadLine();
+            if (operation == "+")
+                result = number1 + number2;
+            else if (operation == "-")
+                result = number1 - number2;
+            else
+                Console.WriteLine("you broke the program");
+            if (operation == "+" || operation == "-")
+            {
+                int userResult;
+                Console.Write("Enter the result number: ");
+                Int32.TryParse(Console.ReadLine(), out userResult);
+                Console.WriteLine(result == userResult ? "Correct" : "Wrong");
+                if (result > userResult)
+                    Console.WriteLine("The result is bigger");
+                if (result < userResult)
+                    Console.WriteLine("The result is lower");
+            }
 
+            Console.WriteLine("-".PadRight(50, '-'));
         }
 
         /// <summary>
@@ -51,7 +107,38 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P5_9_CheckResultWithAttemps()
         {
+            Console.Write("Insert the first number: ");
+            Int32.TryParse(Console.ReadLine(), out var number1);
+            Console.Write("Insert the second number: ");
+            Int32.TryParse(Console.ReadLine(), out var number2);
+            int result = 0;
+            Console.Write("do you want to make addition or subtraction (insert the symbol): ");
+            string operation = Console.ReadLine();
+            if (operation == "+")
+                result = number1 + number2;
+            else if (operation == "-")
+                result = number1 - number2;
+            else
+                Console.WriteLine("you broke the program");
+            if (operation == "+" || operation == "-")
+            {
+                int userResult;
+                int triesCount = 1;
+                do
+                {
+                    Console.Write("Enter the result number: ");
+                    string inputNumber = Console.ReadLine();
+                    Int32.TryParse(inputNumber, out userResult);
+                    Console.WriteLine(result == userResult ? "Correct" : "Wrong");
+                    if (result > userResult)
+                        Console.WriteLine("The result is bigger");
+                    if (result < userResult)
+                        Console.WriteLine("The result is lower");
+                    triesCount++;
+                } while (result != userResult && triesCount < 4);
+            }
 
+            Console.WriteLine("-".PadRight(50, '-'));
         }
 
         /// <summary>
@@ -60,7 +147,44 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P6_9_FiveNumbersAddition()
         {
+            Console.Write("Insert the first number: ");
+            Int32.TryParse(Console.ReadLine(), out var number1);
+            Console.Write("Insert the second number: ");
+            Int32.TryParse(Console.ReadLine(), out var number2);
+            Console.Write("Insert the third number: ");
+            Int32.TryParse(Console.ReadLine(), out var number3);
+            Console.Write("Insert the fourth number: ");
+            Int32.TryParse(Console.ReadLine(), out var number4);
+            Console.Write("Insert the fifth number: ");
+            Int32.TryParse(Console.ReadLine(), out var number5);
+            int result = 0;
+            Console.Write("do you want to make addition or subtraction (insert the symbol): ");
+            string operation = Console.ReadLine();
+            if (operation == "+")
+                result = number1 + number2 + number3 + number4 + number5;
+            else if (operation == "-")
+                result = number1 - number2 - number3 - number4 - number5;
+            else
+                Console.WriteLine("you broke the program");
+            if (operation == "+" || operation == "-")
+            {
+                int userResult;
+                int triesCount = 1;
+                do
+                {
+                    Console.Write("Enter the result number: ");
+                    string inputNumber = Console.ReadLine();
+                    Int32.TryParse(inputNumber, out userResult);
+                    Console.WriteLine(result == userResult ? "Correct" : "Wrong");
+                    if (result > userResult)
+                        Console.WriteLine("The result is bigger");
+                    if (result < userResult)
+                        Console.WriteLine("The result is lower");
+                    triesCount++;
+                } while (result != userResult && triesCount < 4);
+            }
 
+            Console.WriteLine("-".PadRight(50, '-'));
         }
 
         /// <summary>
@@ -69,7 +193,44 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P7_9_NumbersResultWithInfoIfCorrect()
         {
+            Console.Write("Insert the first number: ");
+            Int32.TryParse(Console.ReadLine(), out var number1);
+            Console.Write("Insert the second number: ");
+            Int32.TryParse(Console.ReadLine(), out var number2);
+            Console.Write("Insert the third number: ");
+            Int32.TryParse(Console.ReadLine(), out var number3);
+            Console.Write("Insert the fourth number: ");
+            Int32.TryParse(Console.ReadLine(), out var number4);
+            Console.Write("Insert the fifth number: ");
+            Int32.TryParse(Console.ReadLine(), out var number5);
+            int result = 0;
+            Console.Write("do you want to make addition or subtraction (insert the symbol): ");
+            string operation = Console.ReadLine();
+            if (operation == "+")
+                result = number1 + number2 + number3 + number4 + number5;
+            else if (operation == "-")
+                result = number1 - number2 - number3 - number4 - number5;
+            else
+                Console.WriteLine("you broke the program");
+            if (operation == "+" || operation == "-")
+            {
+                int userResult;
+                int triesCount = 1;
+                do
+                {
+                    Console.Write("Enter the result number: ");
+                    string inputNumber = Console.ReadLine();
+                    Int32.TryParse(inputNumber, out userResult);
+                    Console.WriteLine(result == userResult ? "Correct" : "Wrong");
+                    if (result > userResult)
+                        Console.WriteLine("The result is bigger");
+                    if (result < userResult)
+                        Console.WriteLine("The result is lower");
+                    triesCount++;
+                } while (result != userResult && triesCount < 4);
+            }
 
+            Console.WriteLine("-".PadRight(50, '-'));
         }
 
         /// <summary>
@@ -77,7 +238,10 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P8_9_CircleArea()
         {
-
+            Console.Write("Enter the radius of circle: ");
+            double.TryParse(Console.ReadLine(), out var radius);
+            Console.WriteLine("the square of circle are equal " + (Math.Pow(radius, 2) * Math.PI));
+            Console.WriteLine("-".PadRight(50, '-'));
         }
 
         /// <summary>
@@ -85,7 +249,18 @@ namespace B_3_Operators
         /// </summary>
         public static void B3_P9_9_CreaditCalculator()
         {
+            Console.Write("Enter the loan amount: ");
+            double.TryParse(Console.ReadLine(), out var loanAmount);
+            Console.Write("Enter the rate value: ");
+            double.TryParse(Console.ReadLine(), out var rateValue);
+            Console.WriteLine("payment for a months:");
+            for (int i = 1; i <= 12; i++)
+            {
+                Console.WriteLine($"{i} month: " + (loanAmount * (1 + rateValue / 100) / 12));
+            }
 
+            Console.WriteLine("the total amount of payments are equal: " + (loanAmount * (1 + rateValue / 100)));
+            Console.WriteLine("-".PadRight(50, '-'));
         }
     }
 }
